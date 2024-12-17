@@ -51,7 +51,7 @@ int main()
                     b = validate_floating_value("Enter " LIGHT_GREEN "b (0; 100]:\n" RESET_COLOR, b_for_newton);
                 }
                 while (!validate_interval(a, b));
-            
+
                 y = validate_floating_value("Enter the parameter " LIGHT_GREEN "y [-100; 100] " RESET_COLOR "for the formula:\n", y_condition);
                 break;
 
@@ -80,6 +80,7 @@ int main()
                 num_roots = find_all_roots(user_choice_function, a, b, y, e, roots, newton_method);
                 break;
             default:
+                printf(LIGHT_RED "Please a number between 1 or 2" RESET_COLOR);
                 fflush(stdin);
                 break;
         }
