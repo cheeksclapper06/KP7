@@ -45,8 +45,13 @@ int main()
                 printf("\nYou chose the function: " LIGHT_GREEN "sin(ln(x)) - cos(ln(x)) + y * ln(x) = 0\n" RESET_COLOR);
 
                 printf("\nEnter the interval [a, b]\n" LIGHT_BLUE "Coefficients of the interval can't be zero or less due to logarithm in the function\n" RESET_COLOR);
-                a = validate_floating_value("Enter " LIGHT_GREEN "a (0; 100]:\n" RESET_COLOR , a_for_newton);
-                b = validate_floating_value("Enter " LIGHT_GREEN "b (0; 100]:\n" RESET_COLOR, b_for_newton);
+                do
+                {
+                    a = validate_floating_value("Enter " LIGHT_GREEN "a (0; 100]:\n" RESET_COLOR , a_for_newton);
+                    b = validate_floating_value("Enter " LIGHT_GREEN "b (0; 100]:\n" RESET_COLOR, b_for_newton);
+                }
+                while (!validate_interval(a, b));
+            
                 y = validate_floating_value("Enter the parameter " LIGHT_GREEN "y [-100; 100] " RESET_COLOR "for the formula:\n", y_condition);
                 break;
 
